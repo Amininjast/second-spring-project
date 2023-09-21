@@ -5,23 +5,23 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Library {
+public class Book {
     @Id
-    @SequenceGenerator(name = "library_id_sequence", sequenceName = "library_id_sequence")
-    @GeneratedValue(generator = "library_id_sequence", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "book_id_sequence", sequenceName = "book_id_sequence")
+    @GeneratedValue(generator = "book_id_sequence", strategy = GenerationType.SEQUENCE)
     private Integer bookId;
 
     @Column(nullable = false)
     private String bookName;
 
-    public Library() {
+    public Book() {
     }
 
-    public Library(String bookName) {
+    public Book(String bookName) {
         this.bookName = bookName;
     }
 
-    public Library(Integer bookId, String bookName) {
+    public Book(Integer bookId, String bookName) {
         this.bookId = bookId;
         this.bookName = bookName;
     }
@@ -46,8 +46,8 @@ public class Library {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Library library = (Library) o;
-        return Objects.equals(bookId, library.bookId) && Objects.equals(bookName, library.bookName);
+        Book book = (Book) o;
+        return Objects.equals(bookId, book.bookId) && Objects.equals(bookName, book.bookName);
     }
 
     @Override
