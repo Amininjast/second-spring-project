@@ -10,6 +10,7 @@ public class Library {
     @SequenceGenerator(name = "library_id_sequence", sequenceName = "library_id_sequence")
     @GeneratedValue(generator = "library_id_sequence", strategy = GenerationType.SEQUENCE)
     private Integer bookId;
+
     @Column(nullable = false)
     private String bookName;
 
