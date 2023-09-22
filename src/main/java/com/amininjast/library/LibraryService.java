@@ -3,7 +3,6 @@ package com.amininjast.library;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class LibraryService {
@@ -17,7 +16,7 @@ public class LibraryService {
         return libraryDao.selectAllBooks();
     }
 
-    public Optional<Book> getBook(Integer bookId) {
+    public Book getBook(Integer bookId) {
         return libraryDao.selectBookById(bookId);
     }
 
@@ -31,7 +30,7 @@ public class LibraryService {
     }
 
     public void updateBook(Integer bookId, LibraryRegisterationRequest updateRequest) {
-        Optional<Book> book = getBook(bookId);
+        Book book = getBook(bookId);
         libraryDao.updateBook(book);
     }
 }

@@ -3,7 +3,6 @@ package com.amininjast.library;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping()
@@ -22,7 +21,7 @@ public class LibraryController {
     }
 
     @GetMapping(path = "{bookId}")
-    public Optional<Book> getBook(@PathVariable("bookId") Integer bookId) {
+    public Book getBook(@PathVariable("bookId") Integer bookId) {
         return libraryService.getBook(bookId);
     }
 
