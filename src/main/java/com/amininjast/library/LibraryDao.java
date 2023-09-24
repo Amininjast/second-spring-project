@@ -1,11 +1,12 @@
 package com.amininjast.library;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface LibraryDao {
     List<Book> selectAllBooks();
 
-    Book selectBookById(Integer bookId);
+    Optional<Book> selectBookById(Integer bookId);
 
     void insertBook(Book book);
 

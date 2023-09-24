@@ -3,6 +3,7 @@ package com.amininjast.library;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository("jpa")
 public class LibraryJPADataAccessService implements LibraryDao {
@@ -18,7 +19,7 @@ public class LibraryJPADataAccessService implements LibraryDao {
     }
 
     @Override
-    public Book selectBookById(Integer bookId) {
+    public Optional<Book> selectBookById(Integer bookId) {
         return libraryRepository.findById(bookId);
     }
 

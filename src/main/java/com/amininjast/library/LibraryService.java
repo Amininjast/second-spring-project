@@ -1,5 +1,6 @@
 package com.amininjast.library;
 
+import com.amininjast.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,8 @@ public class LibraryService {
     }
 
     public Book getBook(Integer bookId) {
-        return libraryDao.selectBookById(bookId);
+        return libraryDao.selectBookById(bookId)
+                .orElseThrow(() -> new ResourceNotFoundException("book not found"));
     }
 
     public void addBook(LibraryRegisterationRequest request) {
